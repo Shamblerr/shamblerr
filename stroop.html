@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Stroop Test</title>
+
+        <link rel="stylesheet" href="style.css">
+
+        <script src="code.js"></script>
+
+    </head>
+    <body onload="setup()">
+        <section id="instructions">
+            <h1>Stroop Test</h1>
+            <h2>Instructions:</h2>
+            <p>A word will be displayed at the top in a certain colour. For example:</p>
+            <p style="color: BLUE">RED</p>
+            <p>Below this will be a grid of 9 buttons. You must click the one that SAYS the colour that the above word is COLOURED as.</p>
+            <p>For the example above, you would click <span style="color: YELLOW">BLUE</span></p>
+            <p>Here are some more examples to help you understand:</p>
+            <p>For <span style="color: LIME">YELLOW</span>, click <span style="color: MAGENTA">GREEN</span></p>
+            <p>For <span style="color: RED">PINK</span>, click <span style="color: ORANGE">RED</span></p>
+            <p>For <span style="color: WHITE">BLUE</span>, click <span style="color: YELLOW">WHITE</span></p>
+            <p>You may find this difficult, and that is okay: That's the whole point.</p>
+            <p>The test will gradually get more difficult the higher you score, starting at 3 buttons before eventually expanding to 9.</p>
+            <p>There is a timer, which also gradually goes down faster. You have 3 strikes before it's game over.</p>
+            <p>Once you have read and ensured that you comprehend these instructions, click the button below to begin.</p>
+
+            <button onclick="startStroop()">Begin</button>
+
+            <p>Highest Score: <span id="highscore1">0</span></p>
+
+            <button onclick="resetHS()">Clear High Score</button>
+        </section>
+
+        <section id="game">
+            <h1 id="WORD">...</h1>
+            <div id="timerContainer">
+                <div id="timerBar"></div>
+            </div>
+            <section id="grid">
+                <div><button class="5" id="A1" onclick="chosen('A1')"></button></div>
+                <div><button class="3" id="A2" onclick="chosen('A2')"></button></div>
+                <div><button class="7" id="A3" onclick="chosen('A3')"></button></div>
+                <div><button class="0" id="B1" onclick="chosen('B1')"></button></div>
+                <div><button class="0" id="B2" onclick="chosen('B2')"></button></div>
+                <div><button class="0" id="B3" onclick="chosen('B3')"></button></div>
+                <div><button class="9" id="C1" onclick="chosen('C1')"></button></div>
+                <div><button class="3" id="C2" onclick="chosen('C2')"></button></div>
+                <div><button class="11" id="C3" onclick="chosen('C3')"></button></div>
+            </section>
+            <p>Score: <span id="score">0</span></p>
+            <p id="strikes"><span id="strike1">[ ]</span> <span id="strike2">[ ]</span> <span id="strike3">[ ]</span></p>
+            <p>Highest Score: <span id="highscore2">0</span></p>
+            <button id="restartButton" onclick="resetGame()">Go Again</button>
+        </main>
+    </body>
+</html>
